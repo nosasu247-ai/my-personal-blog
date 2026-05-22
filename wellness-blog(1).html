@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vitality & Bloom — Wellness for Every Body</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF6F0;
+    --warm-white: #FDF9F4;
+    --deep-burgundy: #5C1A2E;
+    --rose: #A0435A;
+    --blush: #E8A0A8;
+    --gold: #C8943A;
+    --gold-light: #E8C87A;
+    --navy: #1A2438;
+    --slate: #3A4A5C;
+    --steel: #8A9AAC;
+    --charcoal: #2A2A2A;
+    --text: #3A3230;
+    --text-light: #6A5A55;
+    --border: #E8DECE;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(250,246,240,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 68px;
+    animation: slideDown 0.6s ease;
+  }
+  @keyframes slideDown { from { transform: translateY(-100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--deep-burgundy);
+    letter-spacing: 0.02em;
+  }
+  .nav-logo span { color: var(--gold); font-style: italic; }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--text-light);
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--deep-burgundy); }
+
+  .nav-cta {
+    background: var(--deep-burgundy);
+    color: white !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 2rem;
+    font-size: 0.75rem !important;
+    transition: background 0.3s !important;
+  }
+  .nav-cta:hover { background: var(--rose) !important; color: white !important; }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 68px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    background: linear-gradient(135deg, #1A2438 0%, #2C3E55 50%, #3A2A35 100%);
+    display: flex; flex-direction: column; align-items: flex-start; justify-content: center;
+    padding: 6rem 5% 6rem 8%;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-left::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 70%, rgba(160,67,90,0.25) 0%, transparent 70%);
+  }
+  .hero-left::after {
+    content: 'HE';
+    position: absolute; right: -2rem; bottom: 3rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 14rem; font-weight: 700;
+    color: rgba(255,255,255,0.03);
+    line-height: 1;
+  }
+
+  .hero-right {
+    background: linear-gradient(135deg, #FAF0F3 0%, #FDE8EE 50%, #FAF0E8 100%);
+    display: flex; flex-direction: column; align-items: flex-start; justify-content: center;
+    padding: 6rem 8% 6rem 5%;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-right::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 30%, rgba(200,148,58,0.15) 0%, transparent 70%);
+  }
+  .hero-right::after {
+    content: 'SHE';
+    position: absolute; left: -1rem; top: 3rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 10rem; font-weight: 700;
+    color: rgba(92,26,46,0.05);
+    line-height: 1;
+  }
+
+  .section-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.9rem;
+    border-radius: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .tag-men { background: rgba(255,255,255,0.12); color: var(--blush); border: 1px solid rgba(255,255,255,0.15); }
+  .tag-women { background: rgba(92,26,46,0.1); color: var(--deep-burgundy); border: 1px solid rgba(92,26,46,0.2); }
+
+  .hero-left h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+    position: relative;
+  }
+  .hero-left h1 em { color: var(--blush); font-style: italic; }
+
+  .hero-right h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    color: var(--deep-burgundy);
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+    position: relative;
+  }
+  .hero-right h1 em { color: var(--gold); font-style: italic; }
+
+  .hero-left p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    max-width: 400px;
+    position: relative;
+  }
+  .hero-right p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    max-width: 400px;
+    position: relative;
+  }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    padding: 0.85rem 2rem;
+    border-radius: 3rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s;
+    position: relative;
+  }
+  .btn-light {
+    background: white;
+    color: var(--deep-burgundy);
+    border: none;
+  }
+  .btn-light:hover { background: var(--blush); color: white; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(160,67,90,0.3); }
+
+  .btn-dark {
+    background: var(--deep-burgundy);
+    color: white;
+    border: none;
+  }
+  .btn-dark:hover { background: var(--rose); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(92,26,46,0.35); }
+
+  .hero-scroll {
+    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    z-index: 10;
+    animation: fadeIn 1.5s ease 1s both;
+  }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .hero-scroll span { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--steel); }
+  .scroll-line {
+    width: 1px; height: 40px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+  @keyframes scrollPulse { 0%,100% { opacity: 0.4; transform: scaleY(1); } 50% { opacity: 1; transform: scaleY(1.1); } }
+
+  /* ─── SECTION INTROS ─── */
+  .section-intro {
+    text-align: center;
+    padding: 5rem 10% 3rem;
+    animation: fadeUp 0.8s ease;
+  }
+  .section-intro .eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+  .section-intro h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .section-intro p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ─── DIVIDER ─── */
+  .divider {
+    display: flex; align-items: center; justify-content: center;
+    gap: 1rem; padding: 1rem 10%;
+  }
+  .divider-line { flex: 1; height: 1px; background: var(--border); }
+  .divider-icon { color: var(--gold); font-size: 1rem; }
+
+  /* ─── CARD GRIDS ─── */
+  .cards-section {
+    padding: 2rem 5% 5rem;
+  }
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .card {
+    background: white;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
+
+  .card-header {
+    padding: 2rem 2rem 1.2rem;
+    position: relative;
+  }
+  .card-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    opacity: 0.07;
+    position: absolute;
+    top: 1rem; right: 1.5rem;
+    line-height: 1;
+  }
+  .card-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  .icon-men { background: linear-gradient(135deg, #1A2438, #3A4A5C); }
+  .icon-women { background: linear-gradient(135deg, #5C1A2E, #A0435A); }
+
+  .card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    color: var(--charcoal);
+  }
+  .card-body { padding: 0 2rem 2rem; }
+  .card p {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+  }
+  .card-tips { list-style: none; }
+  .card-tips li {
+    font-size: 0.82rem;
+    color: var(--text-light);
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #F0EAE0;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .card-tips li:last-child { border-bottom: none; }
+  .card-tips li::before { content: '→'; color: var(--gold); font-size: 0.7rem; flex-shrink: 0; }
+
+  /* ─── MEN SECTION ─── */
+  .men-section { background: var(--warm-white); }
+  .men-section .section-intro h2 { color: var(--navy); }
+  .card-men .card-number { color: var(--navy); }
+
+  /* ─── WOMEN SECTION ─── */
+  .women-section { background: linear-gradient(180deg, #FDF5F7 0%, var(--cream) 100%); }
+  .women-section .section-intro h2 { color: var(--deep-burgundy); }
+  .card-women .card-number { color: var(--deep-burgundy); }
+
+  /* ─── FEATURE STRIP ─── */
+  .feature-strip {
+    background: var(--deep-burgundy);
+    padding: 4rem 8%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2.5rem;
+    text-align: center;
+  }
+  .feature-item {}
+  .feature-item .feat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .feature-item .feat-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* ─── TIPS SECTION ─── */
+  .tips-section {
+    padding: 5rem 5%;
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+  }
+  .tips-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 80% 20%, rgba(160,67,90,0.2) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 80%, rgba(200,148,58,0.1) 0%, transparent 60%);
+  }
+  .tips-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .tips-col h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+  .tips-col .tips-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 2rem;
+    font-style: italic;
+  }
+  .tip-item {
+    display: flex; gap: 1.2rem;
+    margin-bottom: 1.8rem;
+    align-items: flex-start;
+  }
+  .tip-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--gold);
+    flex-shrink: 0;
+    line-height: 1;
+    margin-top: 0.1rem;
+  }
+  .tip-content h4 {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 0.3rem;
+  }
+  .tip-content p {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+  }
+  .tips-divider {
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.15), transparent);
+  }
+
+  /* ─── QUOTE SECTION ─── */
+  .quote-section {
+    padding: 6rem 10%;
+    text-align: center;
+    background: var(--cream);
+    position: relative;
+  }
+  .quote-section::before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 15rem;
+    color: rgba(92,26,46,0.04);
+    position: absolute;
+    top: -2rem; left: 5%;
+    line-height: 1;
+  }
+  .quote-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.3rem, 2.5vw, 2rem);
+    font-style: italic;
+    color: var(--charcoal);
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+    position: relative;
+  }
+  .quote-author {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  /* ─── NEWSLETTER ─── */
+  .newsletter {
+    background: linear-gradient(135deg, #FAF0F3 0%, #FDE8D0 100%);
+    padding: 5rem 10%;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .newsletter h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+    font-weight: 700;
+    color: var(--deep-burgundy);
+    margin-bottom: 0.8rem;
+  }
+  .newsletter p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 2.5rem;
+  }
+  .newsletter-form {
+    display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap;
+  }
+  .newsletter-form input {
+    padding: 0.85rem 1.5rem;
+    border: 1.5px solid var(--border);
+    border-radius: 3rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    background: white;
+    color: var(--text);
+    width: 300px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  .newsletter-form input:focus { border-color: var(--rose); }
+  .newsletter-form button {
+    padding: 0.85rem 2rem;
+    background: var(--deep-burgundy);
+    color: white;
+    border: none;
+    border-radius: 3rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .newsletter-form button:hover { background: var(--rose); transform: translateY(-2px); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--charcoal);
+    padding: 4rem 8% 2.5rem;
+    color: rgba(255,255,255,0.6);
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  .footer-brand .nav-logo { display: block; margin-bottom: 1rem; color: white; }
+  .footer-brand .nav-logo span { color: var(--gold-light); }
+  .footer-brand p { font-size: 0.85rem; line-height: 1.6; max-width: 280px; }
+  .footer-col h4 {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 0.6rem; }
+  .footer-col a {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .footer-col a:hover { color: var(--gold-light); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 2rem;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-bottom p { font-size: 0.78rem; }
+  .footer-disclaimer { font-size: 0.72rem; color: rgba(255,255,255,0.3); max-width: 500px; }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { animation: fadeUp 0.8s ease both; }
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.2s; }
+  .delay-3 { animation-delay: 0.3s; }
+  .delay-4 { animation-delay: 0.4s; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-left, .hero-right { padding: 5rem 8% 4rem; }
+    .hero-left::after, .hero-right::after { display: none; }
+    .nav-links { display: none; }
+    .tips-grid { grid-template-columns: 1fr; }
+    .tips-divider { display: none; }
+    .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
+  }
+
+  /* ─── MODAL / ARTICLE PREVIEW ─── */
+  .read-more {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--gold);
+    transition: gap 0.3s;
+    cursor: pointer;
+    background: none; border: none;
+  }
+  .read-more:hover { gap: 0.8rem; }
+  .read-more-men { color: var(--slate); }
+  .read-more-men:hover { color: var(--navy); }
+
+  /* Label accents */
+  .label-men { 
+    display: inline-block; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 0.2rem 0.7rem; border-radius: 2rem; margin-bottom: 0.8rem;
+    background: rgba(26,36,56,0.08); color: var(--navy); font-weight: 500;
+  }
+  .label-women {
+    display: inline-block; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 0.2rem 0.7rem; border-radius: 2rem; margin-bottom: 0.8rem;
+    background: rgba(92,26,46,0.08); color: var(--rose); font-weight: 500;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-logo">Vitality <span>&</span> Bloom</div>
+  <ul class="nav-links">
+    <li><a href="#men">For Him</a></li>
+    <li><a href="#women">For Her</a></li>
+    <li><a href="#tips">Daily Habits</a></li>
+    <li><a href="#newsletter" class="nav-cta">Subscribe</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <span class="section-tag tag-men">For Him</span>
+    <h1>Build Sexual <em>Stamina</em> Through Daily Habits</h1>
+    <p>Discover how small, consistent daily practices can dramatically improve your performance, energy, and confidence in the bedroom — naturally.</p>
+    <a href="#men" class="btn btn-light">Explore Men's Guide →</a>
+  </div>
+  <div class="hero-right">
+    <span class="section-tag tag-women">For Her</span>
+    <h1>Bloom Into Your Most <em>Radiant</em> Self</h1>
+    <p>Learn how to care for your body holistically — inside and out — to radiate confidence, sensuality, and natural beauty every single day.</p>
+    <a href="#women" class="btn btn-dark">Explore Women's Guide →</a>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- FEATURE STRIP -->
+<div class="feature-strip">
+  <div class="feature-item">
+    <div class="feat-num">12+</div>
+    <div class="feat-label">Daily Habits</div>
+  </div>
+  <div class="feature-item">
+    <div class="feat-num">30</div>
+    <div class="feat-label">Day Programs</div>
+  </div>
+  <div class="feature-item">
+    <div class="feat-num">100%</div>
+    <div class="feat-label">Natural Methods</div>
+  </div>
+  <div class="feature-item">
+    <div class="feat-num">2</div>
+    <div class="feat-label">Tailored Paths</div>
+  </div>
+  <div class="feature-item">
+    <div class="feat-num">∞</div>
+    <div class="feat-label">Confidence Gained</div>
+  </div>
+</div>
+
+<!-- MEN SECTION -->
+<section id="men" class="men-section">
+  <div class="section-intro">
+    <div class="eyebrow">For Him</div>
+    <h2>Building Sexual Stamina<br>Through Simple Daily Habits</h2>
+    <p>Stamina isn't built in a single session — it's built day by day. These evidence-backed habits rewire your body and mind for sustained performance.</p>
+  </div>
+
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-icon">◆</div>
+    <div class="divider-line"></div>
+  </div>
+
+  <div class="cards-section">
+    <div class="cards-grid">
+
+      <div class="card card-men fade-up">
+        <div class="card-header">
+          <div class="card-number">01</div>
+          <div class="card-icon icon-men">🏃</div>
+          <span class="label-men">Fitness</span>
+          <h3>Cardiovascular Conditioning</h3>
+        </div>
+        <div class="card-body">
+          <p>Cardio is the single most impactful habit for sexual stamina. It improves blood flow, increases testosterone, and boosts lung capacity — all crucial for sustained performance.</p>
+          <ul class="card-tips">
+            <li>30-min brisk walk or jog daily</li>
+            <li>Swim or cycle 3–4x per week</li>
+            <li>HIIT intervals 2x per week</li>
+            <li>Take stairs instead of elevators</li>
+          </ul>
+          <br>
+          <button class="read-more read-more-men">Full routine guide →</button>
+        </div>
+      </div>
+
+      <div class="card card-men fade-up delay-1">
+        <div class="card-header">
+          <div class="card-number">02</div>
+          <div class="card-icon icon-men">💪</div>
+          <span class="label-men">Strength</span>
+          <h3>Pelvic Floor & Core Training</h3>
+        </div>
+        <div class="card-body">
+          <p>The pelvic floor is often overlooked in men's fitness, yet it's the most directly linked muscle group to sexual control and endurance.</p>
+          <ul class="card-tips">
+            <li>Kegel exercises: 3 sets of 10 daily</li>
+            <li>Plank holds for core stability</li>
+            <li>Hip bridge exercises</li>
+            <li>Lower ab strengthening routines</li>
+          </ul>
+          <br>
+          <button class="read-more read-more-men">Learn Kegel technique →</button>
+        </div>
+      </div>
+
+      <div class="card card-men fade-up delay-2">
+        <div class="card-header">
+          <div class="card-number">03</div>
+          <div class="card-icon icon-men">🥗</div>
+          <span class="label-men">Nutrition</span>
+          <h3>Performance-Boosting Diet</h3>
+        </div>
+        <div class="card-body">
+          <p>What you eat directly fuels your hormonal health, blood flow, and energy levels. Small dietary shifts create big results over time.</p>
+          <ul class="card-tips">
+            <li>Eat zinc-rich foods: oysters, pumpkin seeds</li>
+            <li>Add dark chocolate for blood flow</li>
+            <li>Include leafy greens & beets daily</li>
+            <li>Reduce alcohol and processed sugar</li>
+          </ul>
+          <br>
+          <button class="read-more read-more-men">See full food guide →</button>
+        </div>
+      </div>
+
+      <div class="card card-men fade-up delay-3">
+        <div class="card-header">
+          <div class="card-number">04</div>
+          <div class="card-icon icon-men">🧘</div>
+          <span class="label-men">Mindset</span>
+          <h3>Breathwork & Stress Control</h3>
+        </div>
+        <div class="card-body">
+          <p>Anxiety and cortisol are the silent killers of stamina. Daily breathwork activates the parasympathetic nervous system, giving you calm control when it matters most.</p>
+          <ul class="card-tips">
+            <li>Box breathing: 4-4-4-4 pattern daily</li>
+            <li>10-min morning meditation</li>
+            <li>Cold showers to build mental toughness</li>
+            <li>Journaling to reduce performance anxiety</li>
+          </ul>
+          <br>
+          <button class="read-more read-more-men">Breathing techniques →</button>
+        </div>
+      </div>
+
+      <div class="card card-men fade-up">
+        <div class="card-header">
+          <div class="card-number">05</div>
+          <div class="card-icon icon-men">😴</div>
+          <span class="label-men">Recovery</span>
+          <h3>Sleep & Testosterone Recovery</h3>
+        </div>
+        <div class="card-body">
+          <p>70% of daily testosterone is produced during deep sleep. Optimizing your sleep schedule is the fastest natural way to boost hormonal vitality.</p>
+          <ul class="card-tips">
+            <li>Target 7–9 hours of quality sleep</li>
+            <li>Sleep before midnight consistently</li>
+            <li>No screens 1 hour before bed</li>
+            <li>Keep bedroom cool (65–68°F ideal)</li>
+          </ul>
+          <br>
+          <button class="read-more read-more-men">Sleep optimization guide →</button>
+        </div>
+      </div>
+
+      <div class="card card-men fade-up delay-1">
+        <div class="card-header">
+          <div class="card-number">06</div>
+          <div class="card-icon icon-men">💧</div>
+          <span class="label-men">Hydration</span>
+          <h3>Hydration & Blood Flow</h3>
+        </div>
+        <div class="card-body">
+          <p>Dehydration reduces blood volume and lowers energy. Proper hydration is foundational — it supports every system involved in sexual performance.</p>
+          <ul class="card-tips">
+            <li>Drink 3–4L of water daily</li>
+            <li>Start mornings with 500ml water</li>
+            <li>Limit caffeine after 2 PM</li>
+            <li>Add electrolytes post-workout</li>
+          </ul>
+          <br>
+          <button class="read-more read-more-men">Hydration plan →</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE SECTION -->
+<div class="quote-section">
+  <p class="quote-text">"Your body is your most intimate partner. Invest in it daily with intention, and it will reward you with power, presence, and lasting vitality."</p>
+  <div class="quote-author">— Vitality & Bloom Philosophy</div>
+</div>
+
+<!-- WOMEN SECTION -->
+<section id="women" class="women-section">
+  <div class="section-intro">
+    <div class="eyebrow">For Her</div>
+    <h2>Bloom Into Your Most <em style="font-family:'Playfair Display',serif; color:var(--rose)">Radiant</em> Self</h2>
+    <p>True sensuality begins within. These daily rituals nurture your body, awaken your confidence, and let your natural beauty shine through every interaction.</p>
+  </div>
+
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-icon" style="color:var(--rose)">✦</div>
+    <div class="divider-line"></div>
+  </div>
+
+  <div class="cards-section">
+    <div class="cards-grid">
+
+      <div class="card card-women fade-up">
+        <div class="card-header">
+          <div class="card-number">01</div>
+          <div class="card-icon icon-women">🌸</div>
+          <span class="label-women">Body Care</span>
+          <h3>Skin & Intimate Body Care</h3>
+        </div>
+        <div class="card-body">
+          <p>Radiant skin is the most visible expression of inner health. A consistent skin and body care ritual signals self-love and creates a glow that no filter can replicate.</p>
+          <ul class="card-tips">
+            <li>Dry brush before showering for lymph flow</li>
+            <li>Moisturize daily — neck, décolletage, body</li>
+            <li>Use gentle, pH-balanced intimate wash</li>
+            <li>Exfoliate 2–3x weekly for soft skin</li>
+          </ul>
+          <br>
+          <button class="read-more">Full skincare ritual →</button>
+        </div>
+      </div>
+
+      <div class="card card-women fade-up delay-1">
+        <div class="card-header">
+          <div class="card-number">02</div>
+          <div class="card-icon icon-women">🥑</div>
+          <span class="label-women">Nutrition</span>
+          <h3>Hormone-Balancing Nutrition</h3>
+        </div>
+        <div class="card-body">
+          <p>The right foods nourish hormonal balance, improve libido, enhance your natural scent, and give your skin and hair the nutrients they need to glow.</p>
+          <ul class="card-tips">
+            <li>Eat healthy fats: avocado, olive oil, nuts</li>
+            <li>Include phytoestrogen foods: flaxseed, soy</li>
+            <li>Collagen-boosting foods: bone broth, berries</li>
+            <li>Reduce refined sugar for clearer skin</li>
+          </ul>
+          <br>
+          <button class="read-more">Women's nutrition guide →</button>
+        </div>
+      </div>
+
+      <div class="card card-women fade-up delay-2">
+        <div class="card-header">
+          <div class="card-number">03</div>
+          <div class="card-icon icon-women">💃</div>
+          <span class="label-women">Movement</span>
+          <h3>Movement & Body Confidence</h3>
+        </div>
+        <div class="card-body">
+          <p>Movement shapes not just your body but your relationship with it. Specific exercises build the strength, flexibility, and body confidence that translate directly into sensual presence.</p>
+          <ul class="card-tips">
+            <li>Yoga or Pilates 3–4x per week</li>
+            <li>Kegel exercises for pelvic strength</li>
+            <li>Dance — any style — for body freedom</li>
+            <li>Hip-opening stretches daily</li>
+          </ul>
+          <br>
+          <button class="read-more">Movement program →</button>
+        </div>
+      </div>
+
+      <div class="card card-women fade-up delay-3">
+        <div class="card-header">
+          <div class="card-number">04</div>
+          <div class="card-icon icon-women">✨</div>
+          <span class="label-women">Confidence</span>
+          <h3>Sensual Confidence & Mindset</h3>
+        </div>
+        <div class="card-body">
+          <p>Sensuality lives in the mind first. Building a loving relationship with your body is the foundation of natural attractiveness and genuine sexual confidence.</p>
+          <ul class="card-tips">
+            <li>Daily positive body affirmations</li>
+            <li>Mirror work — learn to receive your gaze</li>
+            <li>Dress in ways that make you feel powerful</li>
+            <li>Mindful self-touch: massage, oil rituals</li>
+          </ul>
+          <br>
+          <button class="read-more">Confidence rituals →</button>
+        </div>
+      </div>
+
+      <div class="card card-women fade-up">
+        <div class="card-header">
+          <div class="card-number">05</div>
+          <div class="card-icon icon-women">🌿</div>
+          <span class="label-women">Hormones</span>
+          <h3>Hormonal Health & Libido</h3>
+        </div>
+        <div class="card-body">
+          <p>Understanding and supporting your hormonal cycle is transformative. When your hormones are balanced, your energy, mood, and desire naturally align.</p>
+          <ul class="card-tips">
+            <li>Track your cycle — know your phases</li>
+            <li>Manage cortisol with stress rituals</li>
+            <li>Get 7–9 hours of quality sleep</li>
+            <li>Try adaptogens: maca, ashwagandha</li>
+          </ul>
+          <br>
+          <button class="read-more">Hormone balance guide →</button>
+        </div>
+      </div>
+
+      <div class="card card-women fade-up delay-1">
+        <div class="card-header">
+          <div class="card-number">06</div>
+          <div class="card-icon icon-women">🌙</div>
+          <span class="label-women">Rituals</span>
+          <h3>Evening Sensuality Rituals</h3>
+        </div>
+        <div class="card-body">
+          <p>An intentional evening routine signals to your body and mind that you are worthy of care. These rituals cultivate a deep, magnetic feminine energy over time.</p>
+          <ul class="card-tips">
+            <li>Warm rose-oil body massage</li>
+            <li>Scented bath with Epsom salts</li>
+            <li>Journaling: gratitude for your body</li>
+            <li>Silk or satin sleepwear for skin care</li>
+          </ul>
+          <br>
+          <button class="read-more">Evening ritual guide →</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DARK TIPS SECTION -->
+<section id="tips" class="tips-section">
+  <div class="tips-grid">
+    <div class="tips-col">
+      <h2>His Daily Blueprint</h2>
+      <p class="tips-subtitle">A 30-day foundation for lasting stamina</p>
+
+      <div class="tip-item">
+        <div class="tip-num">AM</div>
+        <div class="tip-content">
+          <h4>Morning Activation</h4>
+          <p>Cold shower (2 min), 500ml water, 10 kegel reps, and 15-min walk. This trio spikes testosterone and activates blood flow before the day begins.</p>
+        </div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">PM</div>
+        <div class="tip-content">
+          <h4>Midday Fuel</h4>
+          <p>Zinc-rich lunch, a short breathing exercise (4-7-8 pattern), and a 10-min walk. These breaks prevent cortisol accumulation throughout the day.</p>
+        </div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">EV</div>
+        <div class="tip-content">
+          <h4>Evening Power Session</h4>
+          <p>30–45 min of cardio or strength training, followed by a cool-down stretch. Finish with a protein-rich meal and no screens after 10 PM.</p>
+        </div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">ZZ</div>
+        <div class="tip-content">
+          <h4>Sleep Protocol</h4>
+          <p>Consistent bedtime, cool dark room, no alcohol. Quality deep sleep is when 70% of daily testosterone is produced — protect it fiercely.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tips-divider"></div>
+
+    <div class="tips-col">
+      <h2>Her Daily Glow Ritual</h2>
+      <p class="tips-subtitle">Nourishing body, mind & feminine energy</p>
+
+      <div class="tip-item">
+        <div class="tip-num" style="color:var(--blush)">AM</div>
+        <div class="tip-content">
+          <h4>Morning Ritual</h4>
+          <p>Warm lemon water, 5-min mirror affirmation, dry brushing, followed by a nourishing breakfast with healthy fats. Start each day choosing yourself first.</p>
+        </div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num" style="color:var(--blush)">PM</div>
+        <div class="tip-content">
+          <h4>Movement & Nutrition</h4>
+          <p>A yoga or Pilates session, hormone-supportive lunch, and 10 minutes of pelvic floor work. Movement is medicine and the gateway to body confidence.</p>
+        </div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num" style="color:var(--blush)">EV</div>
+        <div class="tip-content">
+          <h4>Evening Wind-Down</h4>
+          <p>Skincare ritual, rose oil body massage, 10-min journaling. These aren't luxuries — they are investments in the most intimate relationship you have: with yourself.</p>
+        </div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num" style="color:var(--blush)">ZZ</div>
+        <div class="tip-content">
+          <h4>Sleep Beauty Ritual</h4>
+          <p>Magnesium supplement, silk pillowcase, hair oiling. Sleep is when skin repairs, hormones reset, and your body does its deepest restoration work.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section id="newsletter" class="newsletter">
+  <h2>Get Weekly Wellness Guides</h2>
+  <p>Join thousands receiving expert-curated tips for performance, beauty, and confidence — delivered every Tuesday.</p>
+  <div class="newsletter-form">
+    <input type="email" placeholder="Enter your email address">
+    <button type="button">Subscribe Free</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="nav-logo">Vitality <span>&</span> Bloom</div>
+      <p>A wellness platform dedicated to helping men and women build confidence, vitality, and deeply satisfying intimate lives through daily healthy habits.</p>
+    </div>
+    <div class="footer-col">
+      <h4>For Him</h4>
+      <ul>
+        <li><a href="#">Stamina Building</a></li>
+        <li><a href="#">Fitness Routines</a></li>
+        <li><a href="#">Nutrition Guide</a></li>
+        <li><a href="#">Sleep & Recovery</a></li>
+        <li><a href="#">Mindset & Breathwork</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>For Her</h4>
+      <ul>
+        <li><a href="#">Body Care Rituals</a></li>
+        <li><a href="#">Hormonal Health</a></li>
+        <li><a href="#">Movement & Yoga</a></li>
+        <li><a href="#">Sensual Confidence</a></li>
+        <li><a href="#">Evening Routines</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Vitality & Bloom. All rights reserved.</p>
+    <p class="footer-disclaimer">This site is for educational and wellness purposes only. Content is not a substitute for medical advice. Always consult a qualified healthcare professional regarding personal health concerns.</p>
+  </div>
+</footer>
+
+<script>
+  // Intersection Observer for fade-up animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationPlayState = 'running';
+        entry.target.style.opacity = '1';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => {
+    el.style.opacity = '0';
+    el.style.animationPlayState = 'paused';
+    observer.observe(el);
+  });
+
+  // Newsletter button
+  document.querySelector('.newsletter-form button').addEventListener('click', () => {
+    const input = document.querySelector('.newsletter-form input');
+    if (input.value && input.value.includes('@')) {
+      input.value = '';
+      input.placeholder = '✓ You\'re subscribed! Welcome aboard.';
+      input.style.borderColor = '#C8943A';
+    } else {
+      input.style.borderColor = '#A0435A';
+      input.placeholder = 'Please enter a valid email';
+    }
+  });
+
+  // Read more buttons
+  document.querySelectorAll('.read-more').forEach(btn => {
+    btn.addEventListener('click', () => {
+      alert('Full article coming soon! Subscribe to get notified when new guides are published.');
+    });
+  });
+</script>
+</body>
+</html>
