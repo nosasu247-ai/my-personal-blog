@@ -67,6 +67,12 @@
 }
 
   .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--deep-burgundy);
+}
   .nav-links a {
     font-size: 0.78rem;
     font-weight: 500;
@@ -588,7 +594,26 @@
     .hero { grid-template-columns: 1fr; }
     .hero-left, .hero-right { padding: 5rem 8% 4rem; }
     .hero-left::after, .hero-right::after { display: none; }
-    .nav-links { display: none; }
+    .menu-toggle {
+    display: block;
+}
+
+.nav-links {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.nav-links.active {
+    display: flex;
+}
     .tips-grid { grid-template-columns: 1fr; }
     .tips-divider { display: none; }
     .footer-top { grid-template-columns: 1fr; gap: 2rem; }
@@ -632,6 +657,9 @@
   <div class="nav-logo">
   Bedroom <span>Stamina</span>
   <div class="logo-tagline">Sexual Wellness for Every Body</div>
+</div>
+  <div class="menu-toggle" onclick="toggleMenu()">
+  ☰
 </div>
   <ul class="nav-links">
     <li><a href="#men">For Him</a></li>
@@ -1133,6 +1161,10 @@
       alert('Full article coming soon! Subscribe to get notified when new guides are published.');
     });
   });
+  function toggleMenu() {
+    document.querySelector('.nav-links')
+        .classList.toggle('active');
+}
 </script>
 </body>
 </html>
