@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bedroom Stamina — Sexual Wellness for Every Body</title>
+  <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -577,8 +579,41 @@
   }
   .footer-bottom p { font-size: 0.78rem; }
   .footer-disclaimer { font-size: 0.72rem; color: rgba(255,255,255,0.3); max-width: 500px; }
+  .social-links{
+    margin-top:20px;
+    display:flex;
+    gap:15px;
+}
+
+.social-links a{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.08);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.social-links a:hover{
+    background:var(--gold);
+    transform:translateY(-3px);
+}
 
   /* ─── ANIMATIONS ─── */
+  .fade-up{
+    opacity:0;
+    transform:translateY(30px);
+    transition:all 0.8s ease;
+}
+
+.fade-up.show{
+    opacity:1;
+    transform:translateY(0);
+}
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
@@ -588,9 +623,43 @@
   .delay-2 { animation-delay: 0.2s; }
   .delay-3 { animation-delay: 0.3s; }
   .delay-4 { animation-delay: 0.4s; }
+/* Product Download Badge */
 
-  /* ─── RESPONSIVE ─── */
-  @media (max-width: 768px) {
+.download-badge{
+    display:inline-block;
+    background:#E8F8EC;
+    color:#0F7A3D;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:600;
+    margin-top:10px;
+}
+  
+/* Advertisement Banner */
+
+.advert-section{
+    padding:40px 5%;
+    background:var(--cream);
+}
+
+.google-ad{
+    max-width:728px;
+    height:90px;
+    margin:auto;
+    border:2px dashed #cccccc;
+    background:#ffffff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#999999;
+    font-size:14px;
+    border-radius:12px;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
     .hero { grid-template-columns: 1fr; }
     .hero-left, .hero-right { padding: 5rem 8% 4rem; }
     .hero-left::after, .hero-right::after { display: none; }
@@ -648,8 +717,48 @@
     padding: 0.2rem 0.7rem; border-radius: 2rem; margin-bottom: 0.8rem;
     background: rgba(92,26,46,0.08); color: var(--rose); font-weight: 500;
   }
+  /* WhatsApp Floating Button */
+
+.whatsapp-float{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    background: #25D366;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+
+    text-decoration: none;
+
+    z-index: 999;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+
+    transition: transform 0.3s;
+}
+
+.whatsapp-float:hover{
+    transform: scale(1.1);
+}
 </style>
 </head>
+  <a href="https://wa.me/2348113056893"
+   class="whatsapp-float"
+   target="_blank"
+   rel="noopener noreferrer">
+   <i class="fab fa-whatsapp"></i>
+</a>
 <body>
 
 <!-- NAVIGATION -->
@@ -661,12 +770,13 @@
   <div class="menu-toggle" onclick="toggleMenu()">
   ☰
 </div>
-  <ul class="nav-links">
+<ul class="nav-links">
     <li><a href="#men">For Him</a></li>
     <li><a href="#women">For Her</a></li>
     <li><a href="#tips">Daily Habits</a></li>
+    <li><a href="#products">Products</a></li>
     <li><a href="#newsletter" class="nav-cta">Subscribe</a></li>
-  </ul>
+</ul>
 </nav>
 
 <!-- HERO -->
@@ -713,6 +823,20 @@
   </div>
 </div>
 
+  <!-- GOOGLE ADS PLACEHOLDER -->
+
+<section class="advert-section">
+
+    <div class="google-ad">
+
+        Advertisement Space
+        <br>
+        728 × 90 Banner
+
+    </div>
+
+</section>
+  
 <!-- MEN SECTION -->
 <section id="men" class="men-section">
   <div class="section-intro">
@@ -746,10 +870,11 @@
             <li>Take stairs instead of elevators</li>
           </ul>
           <br>
-          <a href="https://paystack.com/buy/two-minutes-not-enough-emjtjx"
+<a href="https://paystack.com/buy/two-minutes-not-enough-emjtjx"
    class="read-more read-more-men"
-   target="_blank">
-   Full Routine Guide →
+   target="_blank"
+   rel="noopener noreferrer">
+   See Full Food Guide →
 </a>
         </div>
       </div>
@@ -770,9 +895,9 @@
             <li>Lower ab strengthening routines</li>
           </ul>
           <br>
-          <a href="https://paystack.com/buy/two-minutes-not-enough-emjtjx"
+    <a href="https://paystack.com/buy/two-minutes-not-enough-emjtjx"
    class="read-more read-more-men"
-   target="_blank">
+   target="_blank" rel="noopener noreferrer">
 Learn Kegel Technique →
 </a>
         </div>
@@ -796,7 +921,7 @@ Learn Kegel Technique →
           <br>
           <a href="https://paystack.com/buy/two-minutes-not-enough-emjtjx"
    class="read-more read-more-men"
-   target="_blank">
+   target="_blank" rel="noopener noreferrer"
 See Full Food Guide →
 </a>
         </div>
@@ -1087,48 +1212,7 @@ See Full Food Guide →
     </div>
   </div>
 </section>
-  <section id="products" class="cards-section">
 
-<div class="section-intro">
-  <div class="eyebrow">Premium Products</div>
-
-  <h2>Bedroom Stamina Digital Guides</h2>
-
-  <p>
-    Download expert wellness guides designed to improve confidence,
-    performance, fitness and overall vitality.
-  </p>
-</div>
-
-<div class="cards-grid">
-
-  <div class="card">
-
-    <div class="card-header">
-      <h3>Ultimate Bedroom Stamina Blueprint</h3>
-    </div>
-
-    <div class="card-body">
-
-      <p>
-        Complete step-by-step system for building endurance,
-        confidence and peak performance.
-      </p>
-
-      <a href="Yhttps://paystack.com/buy/two-minutes-not-enough-emjtjx"
-         class="btn btn-dark"
-         target="_blank">
-
-         Buy & Download
-      </a>
-
-    </div>
-
-  </div>
-
-</div>
-
-</section>
 
 <!-- NEWSLETTER -->
 <section id="newsletter" class="newsletter">
@@ -1139,7 +1223,65 @@ See Full Food Guide →
     <button type="button">Subscribe Free</button>
   </div>
 </section>
+<section id="products" class="cards-section">
 
+<div class="section-intro">
+    <div class="eyebrow">Premium Products</div>
+
+    <h2>Bedroom Stamina Digital Guides</h2>
+
+    <p style="margin-top:10px;color:#0F7A3D;font-weight:600;">
+        ✓ Secure Checkout • Instant Download • Powered by Paystack
+    </p>
+
+    <p>
+        Download practical wellness guides designed to improve confidence,
+        stamina and performance.
+    </p>
+</div>
+
+<div class="cards-grid">
+
+    <div class="card">
+
+        <div class="card-header">
+            <h3>TWO MINUTES IS NOT ENOUGH</h3>
+
+            <p class="download-badge">
+                ✓ Instant PDF Download
+            </p>
+        </div>
+
+        <div class="card-body">
+
+            <p>
+                The Complete Bedroom Stamina Blueprint for Lasting
+                Performance, Confidence and Control.
+            </p>
+
+            <ul class="card-tips">
+                <li>23-page PDF guide</li>
+                <li>Instant download after payment</li>
+                <li>Practical exercises and routines</li>
+                <li>Lifetime access</li>
+            </ul>
+
+            <br>
+
+  <a href="https://paystack.com/buy/two-minutes-not-enough-emjtjx"
+   class="btn btn-dark"
+   target="_blank"
+   rel="noopener noreferrer">
+   Buy Now
+</a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
 <!-- FOOTER -->
 <footer>
   <div class="footer-top">
@@ -1151,6 +1293,39 @@ See Full Food Guide →
     </div>
 </div>
       <p>Bedroom Stamina provides practical sexual wellness education, relationship health tips, fitness guidance, and lifestyle strategies to help individuals improve confidence, vitality, and overall well-being.</p>
+      <div class="social-links">
+
+<a href="https://facebook.com/yourpage"
+   target="_blank"
+   rel="noopener noreferrer">
+<i class="fab fa-facebook-f"></i>
+</a>
+
+<a href="https://instagram.com/yourpage"
+   target="_blank"
+   rel="noopener noreferrer">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://x.com/yourpage"
+   target="_blank"
+   rel="noopener noreferrer">
+<i class="fab fa-x-twitter"></i>
+</a>
+
+<a href="https://tiktok.com/@yourpage"
+   target="_blank"
+   rel="noopener noreferrer">
+<i class="fab fa-tiktok"></i>
+</a>
+
+<a href="https://youtube.com/@yourpage"
+   target="_blank"
+   rel="noopener noreferrer">
+<i class="fab fa-youtube"></i>
+</a>
+
+</div>
     </div>
     <div class="footer-col">
       <h4>For Him</h4>
@@ -1178,43 +1353,49 @@ See Full Food Guide →
     <p class="footer-disclaimer">This site is for educational and wellness purposes only. Content is not a substitute for medical advice. Always consult a qualified healthcare professional regarding personal health concerns.</p>
   </div>
 </footer>
-
 <script>
-  // Intersection Observer for fade-up animations
-  const observer = new IntersectionObserver((entries) => {
+
+// Fade-up animation on scroll
+const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.animationPlayState = 'running';
-        entry.target.style.opacity = '1';
-      }
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
     });
-  }, { threshold: 0.1 });
+}, {
+    threshold: 0.1
+});
 
-  document.querySelectorAll('.fade-up').forEach(el => {
-    el.style.opacity = '0';
-    el.style.animationPlayState = 'paused';
+document.querySelectorAll(".fade-up").forEach(el => {
     observer.observe(el);
-  });
+});
 
-  // Newsletter button
-  document.querySelector('.newsletter-form button').addEventListener('click', () => {
-    const input = document.querySelector('.newsletter-form input');
-    if (input.value && input.value.includes('@')) {
-      input.value = '';
-      input.placeholder = '✓ You\'re subscribed! Welcome aboard.';
-      input.style.borderColor = '#C8943A';
+
+// Newsletter button
+document.querySelector(".newsletter-form button")
+.addEventListener("click", () => {
+
+    const input = document.querySelector(".newsletter-form input");
+
+    if (input.value && input.value.includes("@")) {
+
+        input.value = "";
+        input.placeholder = "✓ You're subscribed! Welcome aboard.";
+        input.style.borderColor = "#C8943A";
+
     } else {
-      input.style.borderColor = '#A0435A';
-      input.placeholder = 'Please enter a valid email';
-    }
-  });
 
-  // Read more buttons
-  
-  function toggleMenu() {
-    document.querySelector('.nav-links')
-        .classList.toggle('active');
+        input.placeholder = "Please enter a valid email";
+        input.style.borderColor = "#A0435A";
+    }
+
+});
+
+
+// Mobile menu
+function toggleMenu() {
+    document.querySelector(".nav-links")
+        .classList.toggle("active");
 }
+
 </script>
-</body>
-</html>
