@@ -1537,24 +1537,18 @@ document.querySelectorAll(".fade-up").forEach(el => {
 
 
 // Newsletter button
-document.querySelector(".newsletter-form button")
-.addEventListener("click", () => {
+<form class="newsletter-form"
+      action="https://formspree.io/f/xykvokjn"
+      method="POST">
 
-    const input = document.querySelector(".newsletter-form input");
+  <input type="email"
+         name="email"
+         placeholder="Enter your email address"
+         required>
 
-    if (input.value && input.value.includes("@")) {
+  <button type="submit">Subscribe Free</button>
 
-        input.value = "";
-        input.placeholder = "✓ You're subscribed! Welcome aboard.";
-        input.style.borderColor = "#C8943A";
-
-    } else {
-
-        input.placeholder = "Please enter a valid email";
-        input.style.borderColor = "#A0435A";
-    }
-
-});
+</form>
 
 
 // Mobile menu
